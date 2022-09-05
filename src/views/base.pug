@@ -1,7 +1,8 @@
 doctype html 
 html(lang="ko")
     head 
-        title Wetube 
+       title #{pageTitle} | Wetube 
+       link(rel="stylesheet" href="https://unpkg.com/mvp.css")
     body  
-        h1 Base!
+        block content
     include partials/footer.pug
