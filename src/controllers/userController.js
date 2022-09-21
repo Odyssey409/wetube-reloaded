@@ -14,7 +14,7 @@ export const postJoin = async (req, res) => {
 
   const usernameExists = await User.exists({ username });
   if (usernameExists) {
-    return res.render("join", {
+    return res.status(400).render("join", {
       pageTitle,
       errorMessage: "This username is already taken.",
     });
@@ -22,7 +22,7 @@ export const postJoin = async (req, res) => {
 
   const emailExists = await User.exists({ email });
   if (emailExists) {
-    return res.render("join", {
+    return res.status(400).render("join", {
       pageTitle,
       errorMessage: "This email is already taken.",
     });
